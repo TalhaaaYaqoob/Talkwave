@@ -34,7 +34,7 @@ phonenumbers
 cartesia~=2.0.3
 websockets>=13.1,<16.0
 deepgram-sdk~=4.7.0
-groq~=0.23.0
+groq~=1.7.0
 google-cloud-speech>=2.33.0,<3
 google-cloud-texttospeech>=2.31.0,<3
 google-genai>=1.41.0,<2
