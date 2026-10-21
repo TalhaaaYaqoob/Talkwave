@@ -1,0 +1,34 @@
+---
+title: "Introduction"
+description: "Open-source platform for building, testing, and running AI voice agents"
+---
+
+## About TalkWave
+
+TalkWave is an open-source, self-hostable platform for AI voice agents. Design call flows in a visual editor, connect the LLM, speech-to-text, and text-to-speech providers you already use, and take calls over the phone, in the browser, or in online meetings.
+
+- **Open source** under the BSD 2-Clause license, with no usage limits.
+- **Self-hosted**: your calls, recordings, and keys stay on your infrastructure.
+- **Bring your own providers** for models, speech, and telephony.
+
+## Quick start
+
+You need [Docker](https://docs.docker.com/get-docker/) with Compose v2.24 or newer and a free [Clerk](https://dashboard.clerk.com) development instance for sign-in.
+
+```bash
+git clone https://github.com/TalhaaaYaqoob/talkwave.git
+cd talkwave
+cp .env.example .env
+cp api/talkwave-backend/env.template api/talkwave-backend/.env
+docker compose up --build
+```
+
+Fill in the passwords and the Clerk publishable key in `.env`, then add `CLERK_SECRET_KEY` and at least one LLM, speech-to-text, and text-to-speech key in `api/talkwave-backend/.env`.
+
+Open [http://localhost:3010](http://localhost:3010), sign in, and create your first agent.
+
+## Next steps
+
+- Check the [prerequisites](/getting-started/prerequisites) for system requirements.
+- Connect a phone number with [Twilio](/integrations/telephony/twilio) or [Vonage](/integrations/telephony/vonage).
+- Deploy to a server with [Docker](/deployment/docker).

@@ -1,0 +1,696 @@
+@import "tailwindcss";
+
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  @keyframes blob {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0px, 0px) scale(1); }
+  }
+
+  @keyframes wave {
+    0% { transform: scaleY(1); }
+    50% { transform: scaleY(0.5); }
+    100% { transform: scaleY(1); }
+  }
+
+  @keyframes shimmer {
+    0% { transform: translateX(-200%); }
+    100% { transform: translateX(400%); }
+  }
+
+  @keyframes audioBar {
+    0%, 100% { height: 4px; }
+    50% { height: 16px; }
+  }
+
+  @keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(52, 245, 194, 0); }
+    50% { box-shadow: 0 0 20px 2px rgba(52, 245, 194, 0.15); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); opacity: 0.4; }
+    50% { transform: translateY(-20px); opacity: 0.8; }
+  }
+
+  @keyframes gradient-sweep {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+}
+
+/* ── App theme: "Sonic Mint" — matches the landing page design system ── */
+:root {
+  --radius: 0.75rem;
+
+  --background: #050a0a;
+  --foreground: #eaf4f0;
+
+  --card: #0a1413;
+  --card-foreground: #eaf4f0;
+
+  --popover: #081110;
+  --popover-foreground: #eaf4f0;
+
+  --primary: #34f5c2;
+  --primary-foreground: #04110c;
+
+  --secondary: #0e1917;
+  --secondary-foreground: #eaf4f0;
+
+  --muted: #101b18;
+  --muted-foreground: #8fa69f;
+
+  --accent: #0f1f1b;
+  --accent-foreground: #eaf4f0;
+
+  --destructive: oklch(0.6 0.2 20);
+
+  --border: rgba(148, 209, 192, 0.12);
+  --input: rgba(148, 209, 192, 0.12);
+  --ring: #34f5c2;
+
+  --chart-1: #34f5c2;
+  --chart-2: #2dd4bf;
+  --chart-3: #93c5fd;
+  --chart-4: #fbbf24;
+  --chart-5: #f87171;
+
+  --sidebar: #060d0c;
+  --sidebar-foreground: #eaf4f0;
+  --sidebar-primary: #34f5c2;
+  --sidebar-primary-foreground: #04110c;
+  --sidebar-accent: #0f1f1b;
+  --sidebar-accent-foreground: #eaf4f0;
+  --sidebar-border: rgba(148, 209, 192, 0.1);
+  --sidebar-ring: #34f5c2;
+}
+
+.dark {
+  --background: #050a0a;
+  --foreground: #eaf4f0;
+  --card: #0a1413;
+  --card-foreground: #eaf4f0;
+  --popover: #081110;
+  --popover-foreground: #eaf4f0;
+  --primary: #34f5c2;
+  --primary-foreground: #04110c;
+  --secondary: #0e1917;
+  --secondary-foreground: #eaf4f0;
+  --muted: #101b18;
+  --muted-foreground: #8fa69f;
+  --accent: #0f1f1b;
+  --accent-foreground: #eaf4f0;
+  --destructive: oklch(0.6 0.2 20);
+  --border: rgba(148, 209, 192, 0.12);
+  --input: rgba(148, 209, 192, 0.12);
+  --ring: #34f5c2;
+  --sidebar: #060d0c;
+  --sidebar-foreground: #eaf4f0;
+  --sidebar-primary: #34f5c2;
+  --sidebar-primary-foreground: #04110c;
+  --sidebar-accent: #0f1f1b;
+  --sidebar-accent-foreground: #eaf4f0;
+  --sidebar-border: rgba(148, 209, 192, 0.1);
+  --sidebar-ring: #34f5c2;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    @apply bg-background text-foreground h-full;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-primary/30 selection:text-white h-full;
+    position: relative;
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+.animate-wave {
+  animation: wave 1.5s ease-in-out infinite;
+}
+
+.animate-audio-bar {
+  animation: audioBar 1.2s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-gradient-sweep {
+  animation: gradient-sweep 3s ease infinite;
+}
+
+/* ── Modern landing visuals ───────────────────────────────────────── */
+
+/* Subtle technical grid background */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.bg-dots {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* Radial fade mask so patterns dissolve toward edges */
+.mask-fade-b {
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 90%);
+  mask-image: linear-gradient(to bottom, black 0%, transparent 90%);
+}
+.mask-fade-radial {
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 35%, transparent 100%);
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black 35%, transparent 100%);
+}
+
+/* Aurora gradient blob */
+@keyframes aurora-drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(6%, -8%) scale(1.15); }
+  66% { transform: translate(-7%, 5%) scale(0.9); }
+}
+.animate-aurora {
+  animation: aurora-drift 18s ease-in-out infinite;
+}
+
+/* Rotating conic gradient — for animated card/border glows */
+@property --bd-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+@keyframes border-rotate {
+  to { --bd-angle: 360deg; }
+}
+.gradient-border {
+  position: relative;
+  isolation: isolate;
+}
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(
+    from var(--bd-angle),
+    transparent 0deg,
+    rgba(52, 245, 194, 0.9) 90deg,
+    rgba(94, 234, 212, 0.6) 160deg,
+    transparent 230deg
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: border-rotate 6s linear infinite;
+}
+
+/* Soft hover lift + glow for cards */
+.card-glow {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.card-glow:hover {
+  transform: translateY(-4px);
+  border-color: rgba(52, 245, 194, 0.35);
+  box-shadow: 0 0 0 1px rgba(52, 245, 194, 0.15), 0 18px 50px -12px rgba(52, 245, 194, 0.3);
+}
+
+/* Marquee strip */
+@keyframes marquee-x {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee-x 32s linear infinite;
+}
+
+/* Shine sweep across an element */
+@keyframes shine-sweep {
+  0% { transform: translateX(-120%) skewX(-12deg); }
+  60%, 100% { transform: translateX(220%) skewX(-12deg); }
+}
+.shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, transparent 30%, rgba(255, 255, 255, 0.25) 50%, transparent 70%);
+  transform: translateX(-120%) skewX(-12deg);
+}
+.shine:hover::after {
+  animation: shine-sweep 0.9s ease;
+}
+
+/* Text gradient helper */
+.text-gradient-blue {
+  background: linear-gradient(180deg, #fff 0%, #9af8df 130%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+ * "SONIC MINT" — landing page theme
+ * Editorial-technical dark theme: deep teal-black canvas, mint waveform
+ * accent, serif-italic display moments, mono section indexing.
+ * Scoped with `lp-` prefixes so it never leaks into the app shell.
+ * ═══════════════════════════════════════════════════════════════════════ */
+
+.lp-root {
+  --lp-bg: #050a0a;
+  --lp-surface: rgba(255, 255, 255, 0.025);
+  --lp-line: rgba(148, 209, 192, 0.1);
+  --lp-mint: #34f5c2;
+  --lp-mint-soft: rgba(52, 245, 194, 0.12);
+  --lp-fg: #eaf4f0;
+  --lp-muted: #8fa69f;
+  background-color: var(--lp-bg);
+  color: var(--lp-fg);
+}
+
+/* Serif display accents (Instrument Serif) */
+.lp-serif {
+  font-family: var(--font-instrument-serif), Georgia, "Times New Roman", serif;
+  letter-spacing: -0.01em;
+}
+
+/* Headline gradient: white → mint */
+.lp-grad-mint {
+  background: linear-gradient(115deg, #ffffff 25%, #b8fbe7 55%, #34f5c2 85%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Soft mint halo for primary CTAs */
+.lp-btn-glow {
+  box-shadow:
+    0 0 0 1px rgba(52, 245, 194, 0.35),
+    0 8px 32px -8px rgba(52, 245, 194, 0.45);
+}
+.lp-btn-glow:hover {
+  box-shadow:
+    0 0 0 1px rgba(52, 245, 194, 0.55),
+    0 12px 44px -8px rgba(52, 245, 194, 0.6);
+}
+
+/* Technical blueprint grid, mint-tinted */
+.lp-grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(52, 245, 194, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(52, 245, 194, 0.045) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* Film-grain overlay — kills the flat "vibecoded" look */
+.lp-noise::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Card system: quiet at rest, mint lift on hover */
+.lp-card {
+  background: var(--lp-surface);
+  border: 1px solid var(--lp-line);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.35s ease, box-shadow 0.35s ease;
+}
+.lp-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(52, 245, 194, 0.32);
+  box-shadow:
+    0 0 0 1px rgba(52, 245, 194, 0.12),
+    0 24px 60px -20px rgba(52, 245, 194, 0.25);
+}
+
+/* Rotating mint conic border (popular plan, active panels) */
+.lp-gradient-border {
+  position: relative;
+  isolation: isolate;
+}
+.lp-gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(
+    from var(--bd-angle),
+    transparent 0deg,
+    rgba(52, 245, 194, 0.9) 90deg,
+    rgba(94, 234, 212, 0.55) 160deg,
+    transparent 230deg
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: border-rotate 7s linear infinite;
+}
+
+/* Expanding sonar rings (hero badge, live dots) */
+@keyframes lp-sonar {
+  0% { transform: scale(0.5); opacity: 0.7; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+.animate-lp-sonar {
+  animation: lp-sonar 2.2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+/* Slow drift for floating hero cards */
+@keyframes lp-drift {
+  0%, 100% { transform: translateY(0) rotate(var(--lp-tilt, 0deg)); }
+  50% { transform: translateY(-14px) rotate(var(--lp-tilt, 0deg)); }
+}
+.animate-lp-drift {
+  animation: lp-drift 7s ease-in-out infinite;
+}
+
+/* Underline sweep for nav links */
+.lp-link {
+  position: relative;
+}
+.lp-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 1px;
+  width: 100%;
+  background: var(--lp-mint);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.lp-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Giant outlined wordmark in the footer */
+.lp-outline-text {
+  -webkit-text-stroke: 1px rgba(52, 245, 194, 0.14);
+  color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-lp-sonar,
+  .animate-lp-drift,
+  .lp-gradient-border::before {
+    animation: none;
+  }
+}
+
+.spotlight-card {
+  @apply rounded-2xl border border-[#34F5C2]/[0.1] bg-[#0a1413] transition-all duration-300;
+}
+.spotlight-card:hover {
+  @apply border-[#34F5C2]/[0.25];
+}
+
+.glass {
+  @apply bg-white/5 backdrop-blur-sm border border-white/10 shadow-xl;
+}
+
+.glass-hover {
+  @apply hover:bg-white/10 hover:border-white/20 transition-all duration-300;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 6px !important;
+  height: 6px !important;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(148, 209, 192, 0.14) !important;
+  border-radius: 9999px !important;
+  border: 4px solid transparent !important;
+  background-clip: content-box !important;
+  transition: background-color 0.2s ease !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(52, 245, 194, 0.35) !important;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent !important;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* =========================================================================
+ * Uiverse Loader (by andrew-manzyk) — unified loading icon for the entire app.
+ *
+ * Render via <AILoader /> (full-viewport overlay) or <Spinner size="…" />
+ * (inline). The CSS lives globally so the SVG <mask> animations evaluate
+ * correctly across every page without needing styled-jsx scoping tricks.
+ *
+ * Scale the loader by setting `--ui-loader-size` on the root element.
+ * ========================================================================= */
+.uiverse-loader {
+  /* Brand palette: Sonic Mint → deep teal.
+   * Tinted alphas match the dark background's box-shadow halo. */
+  --color-one: #5ffad0;
+  --color-two: #0e9d7c;
+  --color-three: #5ffad080;
+  --color-four: #0e9d7c80;
+  --color-five: #5ffad040;
+  --time-animation: 2s;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  /* Sizing/transform is applied by the React wrapper so layout reflects the
+   * scaled footprint correctly. Do not set transform here. */
+  box-shadow:
+    0 0 25px 0 var(--color-three),
+    0 20px 50px 0 var(--color-four);
+  animation: uiverse-colorize calc(var(--time-animation) * 3) ease-in-out infinite;
+}
+
+.uiverse-loader::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border-top: solid 1px var(--color-one);
+  border-bottom: solid 1px var(--color-two);
+  background: linear-gradient(180deg, var(--color-five), var(--color-four));
+  box-shadow:
+    inset 0 10px 10px 0 var(--color-three),
+    inset 0 -10px 10px 0 var(--color-four);
+}
+
+.uiverse-loader > svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.uiverse-loader > .uiverse-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(
+    180deg,
+    var(--color-one) 30%,
+    var(--color-two) 70%
+  );
+}
+
+.uiverse-loader svg mask {
+  filter: contrast(15);
+  animation: uiverse-roundness calc(var(--time-animation) / 2) linear infinite;
+}
+
+.uiverse-loader svg mask polygon {
+  filter: blur(7px);
+}
+
+.uiverse-loader svg mask polygon:nth-child(1) {
+  transform-origin: 75% 25%;
+  transform: rotate(90deg);
+}
+
+.uiverse-loader svg mask polygon:nth-child(2) {
+  transform-origin: 50% 50%;
+  animation: uiverse-rotation var(--time-animation) linear infinite reverse;
+}
+
+.uiverse-loader svg mask polygon:nth-child(3) {
+  transform-origin: 50% 60%;
+  animation: uiverse-rotation var(--time-animation) linear infinite;
+  animation-delay: calc(var(--time-animation) / -3);
+}
+
+.uiverse-loader svg mask polygon:nth-child(4) {
+  transform-origin: 40% 40%;
+  animation: uiverse-rotation var(--time-animation) linear infinite reverse;
+}
+
+.uiverse-loader svg mask polygon:nth-child(5) {
+  transform-origin: 40% 40%;
+  animation: uiverse-rotation var(--time-animation) linear infinite reverse;
+  animation-delay: calc(var(--time-animation) / -2);
+}
+
+.uiverse-loader svg mask polygon:nth-child(6) {
+  transform-origin: 60% 40%;
+  animation: uiverse-rotation var(--time-animation) linear infinite;
+}
+
+.uiverse-loader svg mask polygon:nth-child(7) {
+  transform-origin: 60% 40%;
+  animation: uiverse-rotation var(--time-animation) linear infinite;
+  animation-delay: calc(var(--time-animation) / -1.5);
+}
+
+@keyframes uiverse-rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes uiverse-roundness {
+  0% {
+    filter: contrast(15);
+  }
+  20% {
+    filter: contrast(3);
+  }
+  40% {
+    filter: contrast(3);
+  }
+  60% {
+    filter: contrast(15);
+  }
+  100% {
+    filter: contrast(15);
+  }
+}
+
+/* Subtle hue oscillation that stays inside the blue → cyan band so the loader
+ * never breaks brand. ±18° around the base palette gives a gentle shimmer
+ * without ever wandering toward magenta / orange. */
+@keyframes uiverse-colorize {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  25% {
+    filter: hue-rotate(-12deg);
+  }
+  50% {
+    filter: hue-rotate(0deg);
+  }
+  75% {
+    filter: hue-rotate(15deg);
+  }
+  100% {
+    filter: hue-rotate(0deg);
+  }
+}

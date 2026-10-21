@@ -1,0 +1,46 @@
+---
+title: "Docker"
+description: "Run TalkWave with Docker Compose on your machine or a server"
+---
+
+The repository ships a `docker-compose.yaml` that builds the API and UI images locally and runs them with PostgreSQL, Redis, and MinIO.
+
+## Local machine
+
+```bash
+git clone https://github.com/TalhaaaYaqoob/talkwave.git
+cd talkwave
+cp .env.example .env
+cp api/talkwave-backend/env.template api/talkwave-backend/.env
+docker compose up --build
+```
+
+The first build takes a few minutes. When it finishes, open [http://localhost:3010](http://localhost:3010). The API listens on port `8000`.
+
+<Note>
+Postgres, Redis, and MinIO are bound to `127.0.0.1` so they are never exposed on your network.
+</Note>
+
+## Remote server
+
+Phone providers and browsers need to reach your server over HTTPS, so a remote deployment adds a reverse proxy and a TURN server for WebRTC.
+
+1. Point a domain at your server and put its TLS certificate and key in `./certs` as `fullchain.pem` and `privkey.pem` (for example from Let's Encrypt).
+2. In `.env`, set `UI_APP_URL` to your public URL and fill in `TURN_HOST`, `TURN_USERNAME`, and `TURN_PASSWORD`.
+3. In `api/talkwave-backend/.env`, set `CORS_ALLOWED_ORIGINS` to your domain.
+4. Start the stack with the remote profile. It adds nginx (configured by `nginx.conf`, which serves the UI on `/` and the API on `/api/`), a TURN server for WebRTC, and an optional Cloudflare tunnel:
+
+```bash
+docker compose --profile remote up --build -d
+```
+
+See [SECURITY.md](https://github.com/TalhaaaYaqoob/talkwave/blob/main/SECURITY.md) for a hardening checklist before you go live.
+
+## Updating
+
+```bash
+git pull
+docker compose up --build -d
+```
+
+Database migrations run automatically when the API starts.

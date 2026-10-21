@@ -1,0 +1,10 @@
+# Development override for docker-compose.yaml
+# Builds and tags local dev images instead of the :latest tags.
+# Usage: docker compose -f docker-compose.yaml -f docker-compose.dev.yaml up --build
+
+services:
+  api:
+    image: talkwave/talkwave-api:dev
+
+  ui:
+    image: talkwave/talkwave-ui:dev

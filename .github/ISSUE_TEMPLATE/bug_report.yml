@@ -1,0 +1,91 @@
+name: "🐞 Bug report"
+description: "Something isn't working as expected"
+title: "[Bug]: "
+labels: [bug, triage]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug! Please search [existing issues](../issues) first to avoid duplicates.
+        **Never paste API keys, tokens, phone numbers, or call recordings** — redact them first.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "What happened?"
+      description: "A clear description of the bug."
+      placeholder: "When I start a web call on a workflow with a knowledge base, the agent..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: "Steps to reproduce"
+      placeholder: "1. Create a workflow with...\n2. Click...\n3. See error"
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: "Expected behavior"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: "Area"
+      options:
+        - Workflow builder
+        - Web / browser calls
+        - Telephony (inbound or outbound)
+        - Campaigns
+        - Meeting agent
+        - Knowledge base or memory
+        - Tools and integrations
+        - Authentication
+        - Deployment / Docker
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: "TalkWave version or commit"
+      placeholder: "v1.0.0 or a commit SHA"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: deployment
+    attributes:
+      label: "How are you running TalkWave?"
+      options:
+        - Docker Compose
+        - Local development (uvicorn + npm run dev)
+        - Other cloud or Kubernetes
+    validations:
+      required: true
+
+  - type: input
+    id: providers
+    attributes:
+      label: "Providers involved"
+      description: "LLM, STT, TTS, and telephony providers in use, if relevant."
+      placeholder: "Cerebras, Deepgram Nova-3, Cartesia, Twilio"
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: "Relevant logs"
+      description: "Backend or browser console output. This is rendered as code, so no need for backticks."
+      render: shell
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: "Additional context"
+      description: "Screenshots, browser and OS, or anything else that helps."

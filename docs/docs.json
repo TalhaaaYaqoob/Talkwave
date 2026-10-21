@@ -1,0 +1,82 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "TalkWave",
+  "colors": {
+    "primary": "#16A34A",
+    "light": "#07C983",
+    "dark": "#15803D"
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Guides",
+        "groups": [
+          {
+            "group": "Getting started",
+            "pages": [
+              "getting-started/index",
+              "getting-started/prerequisites",
+              "getting-started/troubleshooting"
+            ]
+          },
+          {
+            "group": "Deployment",
+            "pages": [
+              "deployment/docker"
+            ]
+          },
+          {
+            "group": "Features",
+            "pages": [
+              "features/campaigns",
+              "features/looptalk"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Integrations",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "integrations/overview"
+            ]
+          },
+          {
+            "group": "Telephony",
+            "pages": [
+              "integrations/telephony/overview",
+              "integrations/telephony/twilio",
+              "integrations/telephony/vonage",
+              "integrations/telephony/webhooks",
+              "integrations/telephony/custom"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Discussions",
+        "href": "https://github.com/TalhaaaYaqoob/talkwave/discussions"
+      }
+    ],
+    "primary": {
+      "type": "github",
+      "href": "https://github.com/TalhaaaYaqoob/talkwave"
+    }
+  },
+  "footer": {
+    "socials": {
+      "github": "https://github.com/TalhaaaYaqoob/talkwave"
+    }
+  }
+}

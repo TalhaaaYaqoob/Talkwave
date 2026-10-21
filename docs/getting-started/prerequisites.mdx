@@ -1,0 +1,69 @@
+---
+title: "Prerequisites"
+description: "System requirements and setup needed to run TalkWave locally"
+---
+
+## System Requirements (Local Setup)
+
+### Minimum Requirements
+- **RAM**: 8 GB (4 GB available for Docker)
+- **Storage**: 10 GB free disk space
+- **CPU**: 2 cores (x86_64 or ARM64)
+- **OS**:
+  - macOS 10.15+ (Catalina or newer)
+  - Windows 10/11 with WSL2
+  - Linux with kernel 3.10+
+
+## Software Requirements
+
+To run TalkWave locally, make sure you have the following installed:
+
+- [Docker](https://docs.docker.com/get-docker/) with Docker Compose v2.24 or later
+- [Git](https://git-scm.com/downloads)
+- A free [Clerk](https://dashboard.clerk.com) development instance for sign-in
+
+<Note>
+Docker Compose is included with Docker Desktop. Make sure Docker is running before you begin.
+</Note>
+
+### Docker Resource Allocation
+
+For Docker Desktop users, ensure Docker has adequate resources:
+
+1. Open Docker Desktop settings
+2. Navigate to Resources
+3. Allocate at least:
+   - Memory: 4 GB (8 GB recommended)
+   - CPUs: 2 (4 recommended)
+   - Disk: 10 GB
+
+## Required Ports
+
+Ensure these ports are available:
+
+- `3010` - Web UI
+- `8000` - API Server
+- `5432` - PostgreSQL
+- `6379` - Redis
+- `9000` - MinIO (S3-compatible storage)
+- `9001` - MinIO Console
+
+## Checking Port Availability
+
+Check if a port is in use (replace 3010 with the port number):
+
+<CodeGroup>
+
+```bash macOS/Linux
+lsof -i :3010
+```
+
+```bash Linux (alternative)
+netstat -tulpn | grep 3010
+```
+
+```bash Windows (PowerShell)
+netstat -ano | findstr :3010
+```
+
+</CodeGroup>

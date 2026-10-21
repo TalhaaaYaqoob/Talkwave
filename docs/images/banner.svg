@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="420" viewBox="0 0 1280 420" role="img" aria-label="TalkWave: open-source AI voice agents">
+  <defs>
+    <radialGradient id="glowA" cx="0.12" cy="0.1" r="0.7">
+      <stop offset="0" stop-color="#34f5c2" stop-opacity="0.28" />
+      <stop offset="1" stop-color="#34f5c2" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="glowB" cx="0.85" cy="0.9" r="0.6">
+      <stop offset="0" stop-color="#3b82f6" stop-opacity="0.22" />
+      <stop offset="1" stop-color="#3b82f6" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="brand" x1="0" x2="1">
+      <stop offset="0" stop-color="#2dd4bf" />
+      <stop offset="1" stop-color="#34f5c2" />
+    </linearGradient>
+    <linearGradient id="word" x1="0" x2="1">
+      <stop offset="0" stop-color="#34f5c2" />
+      <stop offset="1" stop-color="#93c5fd" />
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#94d1c0" stroke-opacity="0.06" stroke-width="1" />
+    </pattern>
+    <clipPath id="frame"><rect width="1280" height="420" rx="24" /></clipPath>
+    <style>
+      text { font-family: Inter, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+      .mono { font-family: "JetBrains Mono", ui-monospace, "SFMono-Regular", Consolas, monospace; }
+      .b { transform-box: fill-box; transform-origin: center; animation: eq 1.3s ease-in-out infinite; }
+      .d1 { animation-delay: -0.15s; } .d2 { animation-delay: -0.45s; } .d3 { animation-delay: -0.8s; }
+      .d4 { animation-delay: -0.3s; } .d5 { animation-delay: -0.65s; } .d6 { animation-delay: -1s; }
+      @keyframes eq { 0%, 100% { transform: scaleY(0.45); } 50% { transform: scaleY(1); } }
+      .pulse { animation: pulse 1.6s ease-in-out infinite; }
+      @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
+      .rise1, .rise2, .rise3 { animation: rise 9s ease-in-out infinite; }
+      .rise2 { animation-delay: 1.2s; }
+      .rise3 { animation-delay: 2.4s; }
+      @keyframes rise { 0%, 8% { opacity: 0; transform: translateY(10px); } 16%, 88% { opacity: 1; transform: translateY(0); } 100% { opacity: 0; } }
+    </style>
+  </defs>
+
+  <g clip-path="url(#frame)">
+    <rect width="1280" height="420" fill="#050a0a" />
+    <rect width="1280" height="420" fill="url(#grid)" />
+    <rect width="1280" height="420" fill="url(#glowA)" />
+    <rect width="1280" height="420" fill="url(#glowB)" />
+
+    <!-- ambient waveform -->
+    <g fill="#34f5c2" opacity="0.13">
+      <rect class="b d1" x="40" y="372" width="8" height="28" rx="4" />
+      <rect class="b d2" x="66" y="362" width="8" height="48" rx="4" />
+      <rect class="b d3" x="92" y="378" width="8" height="16" rx="4" />
+      <rect class="b d4" x="118" y="356" width="8" height="60" rx="4" />
+      <rect class="b d5" x="144" y="368" width="8" height="36" rx="4" />
+      <rect class="b d6" x="170" y="374" width="8" height="24" rx="4" />
+      <rect class="b d1" x="196" y="360" width="8" height="52" rx="4" />
+      <rect class="b d3" x="222" y="370" width="8" height="32" rx="4" />
+      <rect class="b d2" x="248" y="380" width="8" height="12" rx="4" />
+      <rect class="b d5" x="274" y="364" width="8" height="44" rx="4" />
+      <rect class="b d4" x="300" y="372" width="8" height="28" rx="4" />
+      <rect class="b d6" x="326" y="358" width="8" height="56" rx="4" />
+      <rect class="b d1" x="352" y="376" width="8" height="20" rx="4" />
+      <rect class="b d2" x="378" y="366" width="8" height="40" rx="4" />
+      <rect class="b d3" x="404" y="372" width="8" height="28" rx="4" />
+      <rect class="b d4" x="430" y="362" width="8" height="48" rx="4" />
+      <rect class="b d5" x="456" y="378" width="8" height="16" rx="4" />
+      <rect class="b d6" x="482" y="368" width="8" height="36" rx="4" />
+      <rect class="b d1" x="508" y="356" width="8" height="60" rx="4" />
+      <rect class="b d2" x="534" y="374" width="8" height="24" rx="4" />
+      <rect class="b d3" x="560" y="364" width="8" height="44" rx="4" />
+      <rect class="b d4" x="586" y="380" width="8" height="12" rx="4" />
+      <rect class="b d5" x="612" y="360" width="8" height="52" rx="4" />
+      <rect class="b d6" x="638" y="370" width="8" height="32" rx="4" />
+      <rect class="b d1" x="664" y="376" width="8" height="20" rx="4" />
+      <rect class="b d2" x="690" y="358" width="8" height="56" rx="4" />
+      <rect class="b d3" x="716" y="368" width="8" height="36" rx="4" />
+      <rect class="b d4" x="742" y="374" width="8" height="24" rx="4" />
+      <rect class="b d5" x="768" y="362" width="8" height="48" rx="4" />
+      <rect class="b d6" x="794" y="378" width="8" height="16" rx="4" />
+      <rect class="b d1" x="820" y="366" width="8" height="40" rx="4" />
+      <rect class="b d2" x="846" y="372" width="8" height="28" rx="4" />
+      <rect class="b d3" x="872" y="356" width="8" height="60" rx="4" />
+      <rect class="b d4" x="898" y="370" width="8" height="32" rx="4" />
+      <rect class="b d5" x="924" y="380" width="8" height="12" rx="4" />
+      <rect class="b d6" x="950" y="364" width="8" height="44" rx="4" />
+      <rect class="b d1" x="976" y="374" width="8" height="24" rx="4" />
+      <rect class="b d2" x="1002" y="360" width="8" height="52" rx="4" />
+      <rect class="b d3" x="1028" y="376" width="8" height="20" rx="4" />
+      <rect class="b d4" x="1054" y="368" width="8" height="36" rx="4" />
+      <rect class="b d5" x="1080" y="358" width="8" height="56" rx="4" />
+      <rect class="b d6" x="1106" y="372" width="8" height="28" rx="4" />
+      <rect class="b d1" x="1132" y="378" width="8" height="16" rx="4" />
+      <rect class="b d2" x="1158" y="362" width="8" height="48" rx="4" />
+      <rect class="b d3" x="1184" y="370" width="8" height="32" rx="4" />
+      <rect class="b d4" x="1210" y="376" width="8" height="20" rx="4" />
+      <rect class="b d5" x="1236" y="366" width="8" height="40" rx="4" />
+    </g>
+
+    <!-- brand -->
+    <text class="mono" x="80" y="92" font-size="14" letter-spacing="3" fill="#34f5c2">OPEN SOURCE &#183; SELF-HOSTED &#183; BSD 2-CLAUSE</text>
+
+    <g transform="translate(80 120) scale(2.4)" fill="url(#brand)">
+      <rect class="b d1" x="0" y="10" width="3" height="6" rx="1.5" />
+      <rect class="b d2" x="5" y="6" width="3" height="14" rx="1.5" />
+      <rect class="b d3" x="10" y="1" width="3" height="24" rx="1.5" />
+      <rect class="b d4" x="15" y="5" width="3" height="16" rx="1.5" />
+      <rect class="b d5" x="20" y="0" width="3" height="26" rx="1.5" />
+      <rect class="b d6" x="25" y="7" width="3" height="12" rx="1.5" />
+      <rect class="b d1" x="30" y="10" width="3" height="6" rx="1.5" />
+    </g>
+    <text x="186" y="176" font-size="78" font-weight="800" letter-spacing="-3" fill="#eaf4f0">Talk<tspan fill="url(#word)">Wave</tspan></text>
+
+    <text x="80" y="244" font-size="31" font-weight="600" letter-spacing="-0.6" fill="#eaf4f0">AI voice agents that answer every call,</text>
+    <text x="80" y="284" font-size="31" font-weight="600" letter-spacing="-0.6" fill="#eaf4f0">on <tspan fill="#34f5c2">your own servers.</tspan></text>
+    <text x="80" y="326" font-size="18" fill="#8fa69f">Visual call flows &#183; Any LLM, voice, and phone line</text>
+
+    <!-- live call card -->
+    <rect x="770" y="70" width="440" height="262" rx="20" fill="#0a1413" stroke="#34f5c2" stroke-opacity="0.18" />
+    <circle class="pulse" cx="798" cy="102" r="5" fill="#34f5c2" />
+    <text x="812" y="107" font-size="15" font-weight="600" fill="#eaf4f0">Live call</text>
+    <text class="mono" x="884" y="107" font-size="13" fill="#8fa69f">Front Desk Receptionist</text>
+    <text class="mono" x="1186" y="107" font-size="13" fill="#8fa69f" text-anchor="end">00:21</text>
+    <line x1="790" y1="124" x2="1190" y2="124" stroke="#94d1c0" stroke-opacity="0.1" />
+
+    <g class="rise1">
+      <rect x="790" y="140" width="330" height="58" rx="14" fill="#101b18" />
+      <text x="806" y="164" font-size="15" fill="#eaf4f0">Thanks for calling Bright Smile Dental.</text>
+      <text x="806" y="186" font-size="15" fill="#eaf4f0">How can I help?</text>
+    </g>
+    <g class="rise2">
+      <rect x="880" y="210" width="310" height="40" rx="14" fill="#34f5c2" />
+      <text x="1035" y="235" font-size="15" font-weight="600" fill="#04110c" text-anchor="middle">Can I book a cleaning on Thursday?</text>
+    </g>
+    <g class="rise3">
+      <rect x="790" y="264" width="400" height="48" rx="12" fill="#34f5c2" fill-opacity="0.08" stroke="#34f5c2" stroke-opacity="0.35" />
+      <circle cx="814" cy="288" r="11" fill="#34f5c2" />
+      <path d="M808.5 288.5l3.5 3.5 7-7.5" fill="none" stroke="#04110c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+      <text x="836" y="293" font-size="15" font-weight="600" fill="#eaf4f0">Appointment booked <tspan fill="#8fa69f" font-weight="400">&#183; Thu 4:00 PM</tspan></text>
+    </g>
+
+    <rect x="0.5" y="0.5" width="1279" height="419" rx="23.5" fill="none" stroke="#34f5c2" stroke-opacity="0.15" />
+  </g>
+</svg>

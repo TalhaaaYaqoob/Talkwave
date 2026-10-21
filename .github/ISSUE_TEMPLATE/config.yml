@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: "💬 Questions and ideas"
+    url: https://github.com/TalhaaaYaqoob/talkwave/discussions
+    about: Ask questions and discuss ideas with the community.
+  - name: "🔒 Report a security vulnerability"
+    url: https://github.com/TalhaaaYaqoob/talkwave/security/advisories/new
+    about: Privately report security vulnerabilities to the maintainers. Do not use public issues.

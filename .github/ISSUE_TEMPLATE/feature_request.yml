@@ -1,0 +1,34 @@
+name: "✨ Feature request"
+description: "Suggest a new feature or improvement"
+title: "[Feature]: "
+labels: [enhancement, triage]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: "What problem would this solve?"
+      description: "Describe the use case. Who needs it, and what are they trying to do?"
+      placeholder: "When running outbound campaigns, I can't..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: "Proposed solution"
+      description: "How you imagine it working."
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: "Alternatives considered"
+      description: "Workarounds or other approaches you've tried."
+
+  - type: checkboxes
+    id: contribute
+    attributes:
+      label: "Contribution"
+      options:
+        - label: "I'd be willing to open a pull request for this."
