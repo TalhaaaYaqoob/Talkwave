@@ -34,7 +34,15 @@
   https://github.com/user-attachments/assets/... link GitHub inserts.
 -->
 <p align="center">
-  <a href="docs/images/demo.mp4"><img src="https://img.shields.io/badge/%E2%96%B6%20%20Watch%20the%20demo-50%20seconds-34f5c2?style=for-the-badge&labelColor=0a1413" alt="Watch the 50-second demo"></a>
+[
+https://github.com/user-attachments/assets/815528b8-51cd-47cd-afb8-fdab2f1c3543
+
+
+  <a href="docs/images/demo.mp4"><img src="https://img.shields.io/badge/%E2%96%B6%20%20Watch%20the%20demo-50%20seconds-34f5c2?style=for-the-badge&labelColor=0a1413" alt="Watch the 50-second demo"></a>](https://github.com/user-attachments/assets/815528b8-51cd-47cd-afb8-fdab2f1c3543
+<p align="center">
+  
+  <sub>Describe an agent, watch it build the call flow, take a live call, and see the analytics.</sub>
+</p>)
   <br>
   <sub>Describe an agent, watch it build the call flow, take a live call, and see the analytics.</sub>
 </p>
