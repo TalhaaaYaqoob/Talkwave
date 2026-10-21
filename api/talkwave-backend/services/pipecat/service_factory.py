@@ -687,7 +687,7 @@ def create_llm_service(user_config):
             )
     elif user_config.llm.provider == ServiceProviders.GROQ.value:
         print(
-            f"Creating Groq LLM service with API key: {user_config.llm.api_key} and model: {user_config.llm.model.value}"
+            f"Creating Groq LLM service with model: {user_config.llm.model.value}"
         )
         return GroqLLMService(
             api_key=user_config.llm.api_key,
