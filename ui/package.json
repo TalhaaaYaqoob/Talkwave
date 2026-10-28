@@ -53,7 +53,7 @@
     "react-hook-form": "^7.56.4",
     "react-international-phone": "^4.5.0",
     "react-select": "^5.10.2",
-    "react-timezone-select": "^3.2.8",
+    "react-timezone-select": "^4.1.0",
     "recharts": "^3.1.2",
     "shadcn-ui": "^0.9.5",
     "sonner": "^2.0.5",
