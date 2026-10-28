@@ -61,5 +61,5 @@ torch>=2.14.1,<3
 torchaudio>=2.5.0,<3
 pipecat-ai[local-smart-turn-v3]
 # LiveKit Cloud transport (optional — enables scalable WebRTC via SFU)
-livekit>=0.17.0,<1
+livekit>=1.1.21,<2
 livekit-api>=0.7.0,<1
