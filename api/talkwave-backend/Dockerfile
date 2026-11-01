@@ -5,7 +5,7 @@
 # from application code so code-only pushes skip pip install entirely.
 
 # Stage 1: Builder - Install Python dependencies (CACHED between deploys)
-FROM python:3.12-slim AS builder
+FROM python:3.15-slim AS builder
 
 WORKDIR /app
 
@@ -25,7 +25,7 @@ RUN find /root/.local -type f -name '*.pyc' -delete && \
     find /root/.local -type f -name '*.pyo' -delete
 
 # Stage 2: Runtime - Minimal image
-FROM python:3.12-slim AS runner
+FROM python:3.15-slim AS runner
 
 WORKDIR /app
 
